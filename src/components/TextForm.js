@@ -17,6 +17,13 @@ export default function TextForm(props) {
         console.log("On Change");
         setText(event.target.value);
     }
+
+    const handleClearClick = () => {
+        console.log("Text Cleared");
+        let newText = ''
+        setText(newText);
+    }
+
     const [text, setText] = useState('');
 
     // setText("New Text"); Correct way to change the state
@@ -28,6 +35,7 @@ export default function TextForm(props) {
                 <textarea className="form-control" value={text} id="textBox" rows="7" onChange={handleOnChange}></textarea>
                 <button className="btn btn-primary my-2" onClick={handleUpClick}>Convert To Uppercase</button>
                 <button className="btn btn-primary mx-2 my-2" onClick={handleLowClick}>Convert To Lowercase</button>
+                <button className="btn btn-primary my-2" onClick={handleClearClick}>Clear Text</button>
             </div>
 
 
