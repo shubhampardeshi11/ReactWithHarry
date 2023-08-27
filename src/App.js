@@ -21,27 +21,34 @@ function App() {
   }
 
 
-  const toogleMode = () => {
+  const toggleMode = () => {
     if (mode === 'light') {
       setMode('dark')
       document.body.style.backgroundColor = "#041d41"
       showAlert("Dark mode is enabled", "success")
+      document.title = ("TextUtils - Dark mode is enabled")
     }
     else {
       setMode('light')
       document.body.style.backgroundColor = "white"
       showAlert("Light mode is enabled", "success")
+      document.title = ("TextUtils - Light mode is enabled")
+
     }
   }
+
+
+
+
   return (
     <>
       {/* <Navbar title="TextUtils" aboutText='About TextUtils'/> */}
-      
-      <Navbar title='TextUtils' mode={mode} toggleMode={toogleMode} />
+
+      <Navbar title='TextUtils' mode={mode} toggleMode={toggleMode} />
       <Alert alert={alert} />
 
       <div className="container my-3">
-        <TextForm heading="Enter your text to analyze below" mode={mode} showAlert={showAlert}/>
+        <TextForm heading="Enter your text to analyze below" mode={mode} showAlert={showAlert} />
         {/* {<About/>} */}
       </div>
     </>
