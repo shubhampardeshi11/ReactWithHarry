@@ -22,8 +22,18 @@ function App() {
     }, 2000);
   }
 
+  const removeBodyClasses = () => {
+    document.body.classList.remove("bg-primary");
+    document.body.classList.remove("bg-success");
+    document.body.classList.remove("bg-secondary");
+    document.body.classList.remove("bg-light");
+    document.body.classList.remove("bg-dark");
+  }
 
-  const toggleMode = () => {
+  const toggleMode = (cls) => {
+    removeBodyClasses();
+    document.body.classList.add('bg-' + cls);
+
     if (mode === 'light') {
       setMode('dark')
       document.body.style.backgroundColor = "#041d41"
